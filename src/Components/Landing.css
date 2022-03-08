@@ -16,11 +16,13 @@
 
 .employee-container button {
     border: none;
+    color: black;
     /* background-color: ; */
     border-radius: 5px;
     font-size: 20px;
     width: 100px;
     height: 35px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 

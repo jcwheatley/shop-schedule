@@ -1,6 +1,7 @@
 .day-btn {
     border: none;
     border-radius: 5px;
+    color: black;
     /* width: 80px; */
     background-color: white;
 }
@@ -30,15 +31,16 @@
     background: blue; */
     border: none;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 2em;
 }
 
 .desk-btn {
     border: none;
     /* border: 1px solid #E0E0E0; */
+    color: black;
     background-color: white;
-    font-size: 12px;
-    height: 25px;
+    font-size: 16px;
+    height: 35px;
     width: 90px;
 }
 
@@ -61,6 +63,10 @@ table td {
 .day-btn:hover {
     /* background-color: lightgray; */
     cursor: pointer;
+}
+
+.day-btn {
+    padding: 10px;
 }
 
 .day-btn-selected {
@@ -92,9 +98,10 @@ table td {
 .Annie {
     border: none;
     background-color: #ffc425;
+    color: black;
     font-size: 12px;
     font-weight: bold;
-    height: 25px;
+    height: 35px;
     width: 90px;
 }
 
@@ -110,7 +117,7 @@ table td {
     color: white;
     font-size: 12px;
     font-weight: bold;
-    height: 25px;
+    height: 35px;
     width: 90px;
 }
 
@@ -120,7 +127,7 @@ table td {
     color: white;
     font-size: 12px;
     font-weight: bold;
-    height: 25px;
+    height: 35px;
     width: 90px;
 }
 
@@ -130,7 +137,7 @@ table td {
     color: white;
     font-size: 12px;
     font-weight: bold;
-    height: 25px;
+    height: 35px;
     width: 90px;
 }
 
@@ -140,6 +147,6 @@ table td {
     color: black;
     font-size: 12px;
     font-weight: bold;
-    height: 25px;
+    height: 35px;
     width: 90px;
 }

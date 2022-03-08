@@ -206,7 +206,7 @@ class Home extends Component {
                                 className={this.state.selectedDay === day ? 'day-btn day-btn-selected' : 'day-btn'} 
                                 onClick={ () => this.handleDaySelect(day)}
                             >
-                                {day.split(',')[0]}
+                                <b>{day.split(',')[0]}</b>
                                 <br/>
                                 {day.split(',')[1]}
                             </button>

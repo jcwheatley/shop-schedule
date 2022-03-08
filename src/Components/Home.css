@@ -8,31 +8,55 @@
 .scheduling-header {
     margin: 5px 5px 0 5px;
     display: flex;
+    padding-bottom: 15px;
+}
+
+.header-title{
+    font-size: 20px;
+    font-weight: bold;
+    width: calc(100% - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookable-days {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .back-btn {
-    color: #2069e0;
-    background: none;
+    /* color: #2069e0;
+    background: blue; */
     border: none;
     font-weight: bold;
     font-size: 1em;
 }
 
 .desk-btn {
-    border: 1px solid black;
+    border: none;
+    /* border: 1px solid #E0E0E0; */
     background-color: white;
     font-size: 12px;
-    height: 20px;
+    height: 25px;
     width: 90px;
 }
 
-.booked-desk-btn {
-    border: 1px solid black;
-    background-color: orange;
-    font-size: 12px;
-    height: 20px;
-    width: 90px;
+table {
+    border-collapse: collapse;
+    /* border-spacing: 0px; */
+
+ }
+ 
+ /* And this to your table's `td` elements. */
+table td {
+    padding: 0; 
+    margin: 0;
+    height: 100%
+    /* border-spacing: 0px; */
+
 }
+
 
 .day-btn:hover {
     /* background-color: lightgray; */
@@ -46,48 +70,76 @@
 
 .timeslots {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
+.table-time-column {
+    height: 100%;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+
+/* .Annie-title {
+    color: #ffc425;
+    margin-left: 5px;
+    padding: 3px;
+} */
+
 .Annie {
-    border: 1px solid black;
+    border: none;
     background-color: #ffc425;
     font-size: 12px;
-    height: 20px;
+    font-weight: bold;
+    height: 25px;
     width: 90px;
 }
 
+/* .John-title {
+    background-color: #00aedb;
+    margin-left: 5px;
+    padding: 3px;
+} */
+
 .John {
-    border: 1px solid black;
+    border: none;
     background-color: #00aedb;
     color: white;
     font-size: 12px;
-    height: 20px;
+    font-weight: bold;
+    height: 25px;
     width: 90px;
 }
 
 .Michele {
-    border: 1px solid black;
+    border: none;
     background-color: #0040DB;
     color: white;
     font-size: 12px;
-    height: 20px;
+    font-weight: bold;
+    height: 25px;
     width: 90px;
 }
 
 .Scott {
-    border: 1px solid black;
+    border: none;
     background-color: #00b159;
     color: white;
     font-size: 12px;
-    height: 20px;
+    font-weight: bold;
+    height: 25px;
     width: 90px;
 }
 
 .James {
-    border: 1px solid black;
-    background-color: #0040DB;
-    color: white;
+    border: none;
+    background-color: #b1c0bc;
+    color: black;
     font-size: 12px;
-    height: 20px;
+    font-weight: bold;
+    height: 25px;
     width: 90px;
 }

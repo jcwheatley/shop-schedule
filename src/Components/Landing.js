@@ -48,7 +48,6 @@ class Landing extends Component {
 
         return (
             <div className='landing-container'>
-                {/* <img src={}../../assets/img/threaded-logo.png" width="200"></img> */}
                 <img src={`${process.env.PUBLIC_URL}/assets/img/threaded-logo.png`} width={100}></img>
                 <div className='employee-container'>
                     <h2>Shop Scheduler</h2>
@@ -79,9 +78,6 @@ class Landing extends Component {
                     </Link>
 
                 </div>
-
-                
-                {/* <button>Click may!!</button> */}
             </div>
         );
     }

@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import './Home.css';
-import Landing from './Landing';
 import { Link } from 'react-router-dom';
-import {useLocation} from "react-router-dom";
-import { withRouter } from "react-router";
-import PropTypes from 'prop-types';
-import Add from './Add';
-import FetchData from './FetchData';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import { IconButton } from '@mui/material';
 
 import { db } from '../../src/index';
 
@@ -16,9 +12,10 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            bookableDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            bookableDays: [],
             bookedTimes: [],
-            selectedDay: moment().format('dddd, MMM Do'),
+            selectedDay: moment().format('ddd,MMM D'),
+            selectedDayTimes: [],
             times: [],
             employee: this.props.employee,
         }
@@ -26,37 +23,88 @@ class Home extends Component {
     }
 
     getBookedTimes = () => {
-        let bookedTimesObj;
-        db.collection("times")
-        .get()
-        .then((querySnapshot) => {
-            console.log("firestore", querySnapshot);
-            querySnapshot.docs.map((doc) => {
-                if(doc.id === 'bookedtimes'){
-                    console.log("doc data: ", doc.data());
-                    bookedTimesObj = doc.data().bookedTimes;
-                    this.setState({
-                        bookedTimes: bookedTimesObj
-                    })
-                }
-            });
+        console.log("getBOOKEDTIMES CALLED");
+        let bookedTimesResponse;
+        let selectedDayTimesResponse;
+
+        const dbRef = db.collection('times').doc(this.state.selectedDay)
+
+        // check if document exists before doing stuff
+        dbRef.get()
+        .then((docSnapshot) => {
+            if (!docSnapshot.exists) {
+                dbRef.set({bookedTimes: []}) // create the document
+                this.setState({
+                    bookedTimes: []
+                })
+                // dbRef.onSnapshot((doc) => {
+                // // do stuff with the data
+                // });
+            } 
         });
+
+        db.collection("times")
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.docs.map((doc) => {
+                    if(doc.id === this.state.selectedDay){
+                        // console.log("doc data: ", doc.data());
+                        bookedTimesResponse = doc.data().bookedTimes;
+                        // selectedDayTimesResponse = doc.data()[this.state.selectedDay];
+                        this.setState({
+                            bookedTimes: bookedTimesResponse,
+                            // selectedDayTimes: selectedDayTimesResponse
+                        })
+                        console.log("Booked times resolved");
+                    }
+                });
+            });
     };
 
     setBookedTimes = (newBookedTimes) => {
-        console.log("Adding bookedTimes to firebase: ", newBookedTimes);
-      db.collection("times")
-        .doc("bookedtimes")
-        .set({
-          bookedTimes: newBookedTimes
-        })
-        .then(function () {
-          console.log("Value successfully written!");
-        })
-        .catch(function (error) {
-          console.error("Error writing Value: ", error);
-        });
+        // console.log("Adding bookedTimes to firebase: ", newBookedTimes);
+        db.collection("times")
+            .doc(this.state.selectedDay)
+            .set({
+                bookedTimes: newBookedTimes
+                // [this.state.selectedDay]: newBookedTimes
+            })
+            .then(function () {
+                console.log("Successfully written to Firebase!");
+            })
+            .catch(function (error) {
+                console.error("Error writing Value: ", error);
+            });
     };
+
+    updateBookedTimes = (newBookedTimes) => {
+
+        const dbRef = db.collection('times').doc('bookedtimes')
+
+        // check if document exists before doing stuff
+        dbRef.get()
+        .then((docSnapshot) => {
+            if (docSnapshot.exists) {
+                dbRef.onSnapshot((doc) => {
+                // do stuff with the data
+                });
+            } else {
+                // dbRef.set({...}) // create the document
+            }
+        });
+
+        db.collection("times")
+            .doc("bookedtimes")
+            .update({
+                [this.state.selectedDay]: newBookedTimes
+            })
+            .then(function () {
+                console.log("Successfully written to Firebase!");
+            })
+            .catch(function (error) {
+                console.error("Error writing Value: ", error);
+            });
+    }
 
     componentDidMount() {
         this.setTimes();
@@ -67,23 +115,27 @@ class Home extends Component {
         var x = 30; //minutes interval
         var times = []; // time array
         var tt = 60*9; // start time
-        var ap = ['AM', 'PM']; // AM-PM
+        var ap = ['am', 'pm']; // AM-PM
 
         //loop to increment the time and push results in array
-        for (var i=0;tt<21*60; i++) {
+        for (var i=0;tt<20*60; i++) {
             var hh = Math.floor(tt/60); // getting hours of day in 0-24 format
             var mm = (tt%60); // getting minutes of the hour in 0-55 format
             times[i] = ("" + ((hh===12)?12:hh%12)).slice(-2) + ':' + ("0" + mm).slice(-2) + ap[Math.floor(hh/12)]; // pushing data in array in [00:00 - 12:00 AM/PM format]
             tt = tt + x;
         }
 
-        let bookableDays = [
-            moment().format('dddd, MMM Do'),
-            moment().add(1, 'days').format('dddd, MMM D'),
-            moment().add(2, 'days').format('dddd, MMM D'),
-            moment().add(3, 'days').format('dddd, MMM D'),
-            moment().add(4, 'days').format('dddd, MMM D')
-        ]
+        let bookableDays = []
+
+        for(let dayCount = 0; dayCount < 6; dayCount++){
+            if(moment().add(dayCount, 'days').format('ddd') !== "Sun") {
+                bookableDays.push(moment().add(dayCount, 'days').format('ddd,MMM D'))
+            }
+        }
+        if(bookableDays.length === 5){
+            bookableDays.push(moment().add(6, 'days').format('ddd,MMM D'))
+        }
+        
         this.setState({
             times: times,
             bookableDays: bookableDays
@@ -91,7 +143,10 @@ class Home extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-
+        if(prevState.selectedDay !== this.state.selectedDay){
+            console.log("Selected day changed to: ", this.state.selectedDay);
+            this.getBookedTimes();
+        }
     }
 
     handleDaySelect = (day) => {
@@ -100,31 +155,31 @@ class Home extends Component {
         })
     }
 
-    handleTimeBooked = (time) => {
+    handleTimeBooked = (time, deskNumber) => {
         let bookedTimes = this.state.bookedTimes;
-        let timeObj = bookedTimes.find(x => (x.time === time && x.employee === this.state.employee));
+        // let timeObj = bookedTimes.find(x => (x.time === time && x.employee === this.state.employee));
+        let masterTimeObj = this.state.bookedTimes?.filter((x) => {
+            return (x.time === time && x.employee === this.state.employee && x.deskNumber === deskNumber);
+        })
 
-        if(!timeObj){
-            let newTime = {
-                "time": time,
-                "employee": this.state.employee
-            }
-            console.log("Adding object: ", newTime);
-            bookedTimes.push(newTime)
+        let timeObj = {
+            "time": time,
+            "employee": this.state.employee,
+            "deskNumber": deskNumber
+        }
+
+        if(!masterTimeObj?.find(x => (x.time === time && x.employee === this.state.employee && x.deskNumber === deskNumber))){
+            console.log("Adding object: ", timeObj);
+            bookedTimes?.push(timeObj)
             this.setState({
                 bookedTimes: bookedTimes
             })
             this.setBookedTimes(bookedTimes);
         }
         else{
-            let removeTime = {
-                "time": time,
-                "employee": this.state.employee
-            }
-            console.log("removing object: ", removeTime);
-
-            this.setState({bookedTimes: this.state.bookedTimes.filter((t)=> {
-                return ( (t.time !== removeTime.time) || (t.employee !== removeTime.employee) ) ; 
+            console.log("removing object: ", timeObj);
+            this.setState({bookedTimes: this.state.bookedTimes?.filter((t)=> {
+                return ( (t.time !== timeObj.time) || (t.employee !== timeObj.employee) || (t.deskNumber !== timeObj.deskNumber) ) ; 
             })}, () => this.setBookedTimes(this.state.bookedTimes))
         }
     }
@@ -136,54 +191,70 @@ class Home extends Component {
                 {/* <button onClick={() => console.log(this.state.bookedTimes)}>Print state</button> */}
                 <div className='scheduling-header'>
                     <Link to="/">
-                        <button className='back-btn'>
-                            &#60; Back
-                        </button>
+                        <IconButton className='back-btn' aria-label="back">
+                            <ArrowCircleUpIcon style={{ color: "#2069e0", transform: "rotate(270deg)" }}/>
+                        </IconButton>
                     </Link>
-                    <h3>Scheduling for {this.props?.employee}</h3>
+                    <div className='header-title'>Scheduling for {this.props?.employee}</div>
                 </div>
                 
                 <div className={"bookable-days"}>
                     {this.state.bookableDays.map((day, idx) => {
-                        return <button key={idx} className={this.state.selectedDay === day ? 'day-btn day-btn-selected' : 'day-btn'} onClick={ () => this.handleDaySelect(day) }>{day}</button>
+                        return (
+                            <button 
+                                key={idx} 
+                                className={this.state.selectedDay === day ? 'day-btn day-btn-selected' : 'day-btn'} 
+                                onClick={ () => this.handleDaySelect(day)}
+                            >
+                                {day.split(',')[0]}
+                                <br/>
+                                {day.split(',')[1]}
+                            </button>
+                        )
                     })}
                 </div>
                 <div className='timeslots'>
                     <table >
                         <tbody>
-                            {this.state.bookedTimes && this.state.times.map((time, idx) => {
-                                // console.log("time: ", time)
-                                let temptime = this.state.bookedTimes.find((x) => {
+                            {console.log("===================")}
+                            {this.state.times.map((time, idx) => {
+                                let temptime = this.state.bookedTimes?.filter((x) => {
                                     return x.time === time
                                 })
-                                let bookedEmployee;
-                                if(temptime){
-                                    bookedEmployee = temptime.employee;
-                                    console.log("temptime", temptime);
-                                } 
+                                console.log(time, temptime);
+                                let bookedEmployeeOne = temptime?.find(o => o.deskNumber === 1)?.employee
+                                let bookedEmployeeTwo = temptime?.find(o => o.deskNumber === 2)?.employee
                                 return (
                                     <>
                                         <tr key={idx}>
-                                            <td>{time}</td>
-                                            {this.state.bookedTimes &&
-                                                console.log("bookedTimes: ", this.state.bookedTimes)
-                                            }
-                                            
+                                            <td className='table-time-column'>
+                                                <span>{time}</span>
+                                            </td>
                                             <td>
                                                 <button 
-                                                    className={bookedEmployee ? bookedEmployee : 'desk-btn'} 
-                                                    onClick={ () => this.handleTimeBooked(time)}>{bookedEmployee ? bookedEmployee : "OPEN"}
+                                                    className={(bookedEmployeeOne) ? bookedEmployeeOne : 'desk-btn'} 
+                                                    onClick={ 
+                                                        (bookedEmployeeOne === this.state.employee || !bookedEmployeeOne)
+                                                            ? () => this.handleTimeBooked(time, 1) 
+                                                            : () => console.log("ERR: you can't edit someone else's time")
+                                                    }
+                                                >
+                                                    {(bookedEmployeeOne ) ? bookedEmployeeOne : "OPEN"}
                                                 </button>
                                             </td>
                                             <td>
                                                 <button 
-                                                    className='desk-btn' 
-                                                    onClick={ () => this.handleTimeBooked(time)}>{this.state.bookedTimes.includes(time) ? this.state.employee : "OPEN"}
+                                                    className={(bookedEmployeeTwo) ? bookedEmployeeTwo : 'desk-btn'} 
+                                                    onClick={ 
+                                                        (bookedEmployeeTwo === this.state.employee || !bookedEmployeeTwo) 
+                                                            ? () => this.handleTimeBooked(time, 2) 
+                                                            : () => console.log("ERR: you can't edit someone else's time")
+                                                    }
+                                                >
+                                                    {(bookedEmployeeTwo ) ? bookedEmployeeTwo : "OPEN"}
                                                 </button>
                                             </td>
-                                            {/* <td><button className={this.state.bookedTimes.find(x => x.time === time) ? 'booked-desk-btn' : 'desk-btn'} onClick={ () => this.handleTimeBooked(time)}>{this.state.bookedTimes.find(x => x.time === time) ? this.state.employee : "OPEN"}</button></td>
-                                            <td><button className='desk-btn' onClick={ () => this.handleTimeBooked(time)}>{this.state.bookedTimes.includes(time) ? this.state.employee : "OPEN"}</button></td> */}
-                                        </tr>
+                                       </tr>
                                     </>
                                     
                                 

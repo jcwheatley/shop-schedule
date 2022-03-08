@@ -3,7 +3,7 @@ import Home from "./Home";
 
 function Schedule() {
  let data = useLocation();
- console.log(data); //state would be in data.state//
+//  console.log(data); //state would be in data.state
 
     return(
         <Home employee={data.state.employee}/>

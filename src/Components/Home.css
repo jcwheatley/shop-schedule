@@ -38,9 +38,13 @@
 
 .timeslots-container {
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     display: flex;
     justify-content: center;
+}
+
+.timesheet-link {
+    margin-bottom: 100px;
 }
 
 table {

@@ -47,37 +47,32 @@ class Landing extends Component {
         }
 
         return (
-            <div className='landing-container'>
-                <img src={`${process.env.PUBLIC_URL}/assets/img/threaded-logo.png`} width={100}></img>
-                <div className='employee-container'>
-                    <h2>Shop Scheduler</h2>
-                    <Link to={annie}>
-                        <button variant="outlined">
-                            Annie
-                        </button>
-                    </Link>
-                    <Link to={john}>
-                        <button variant="outlined">
-                            John
-                        </button>
-                    </Link>
-                    <Link to={michele}>
-                        <button variant="outlined">
-                            Michele
-                        </button>
-                    </Link>
-                    <Link to={scott}>
-                        <button variant="outlined">
-                            Scott
-                        </button>
-                    </Link>
-                    <Link to={james}>
-                        <button variant="outlined">
-                            James
-                        </button>
-                    </Link>
-
+            <div className='landing-view'>
+                <div className='logo-container'>
+                    <img src={`${process.env.PUBLIC_URL}/assets/img/threaded-logo.png`} width={100}></img>
                 </div>
+                <div className='landing-container'>
+                    <div className='employee-container'>
+                        <h2>Shop Scheduler</h2>
+                        <Link to={annie}>
+                            Annie
+                        </Link>
+                        <Link to={john}>
+                            John
+                        </Link>
+                        <Link to={michele}>
+                            Michele
+                        </Link>
+                        <Link to={scott}>
+                            Scott
+                        </Link>
+                        <Link to={james}>
+                            James
+                        </Link>
+
+                    </div>
+                </div>
+                
             </div>
         );
     }

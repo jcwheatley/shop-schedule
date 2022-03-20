@@ -25,6 +25,11 @@ class Home extends Component {
     componentDidMount() {
         this.setTimes();
         this.getBookedTimes();
+        if(moment().format('ddd') === "Sun"){
+            this.setState({
+                selectedDay: moment().add(1, 'days').format('ddd,MMM D')
+            })
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -216,6 +221,26 @@ class Home extends Component {
                         </tbody>
                     </table>
                 </div>
+                {this.props.employee === "Annie" &&
+                    <div className='timesheet-link'>
+                        <a href="https://docs.google.com/spreadsheets/d/1HQdlWAv8jz9_6yruEZ7Hr3dm1Ftu_VylHza7vtydh6E/edit#gid=0">Link to Timesheet</a>
+                    </div>
+                }
+                {this.props.employee === "John" &&
+                    <div className='timesheet-link'>
+                        <a href="https://docs.google.com/spreadsheets/d/1gIro0D0JtlnjZtY-3RYk6dyS2G7z5G9CauRdGVE_DkY/edit#gid=0">Link to Timesheet</a>
+                    </div>
+                }
+                {this.props.employee === "Michele" &&
+                    <div className='timesheet-link'>
+                        <a href="https://docs.google.com/spreadsheets/d/1Aw1NX8H4JchlMNJQ8x-lgiQODsbQGAcoXj-UPxpk8lQ/edit#gid=0">Link to Timesheet</a>
+                    </div>
+                }
+                {this.props.employee === "Scott" &&
+                    <div className='timesheet-link'>
+                        <a href="https://docs.google.com/spreadsheets/d/1jgboUbRl7tUfvz7jvs-5PkuaXrFM9GFgmwEVSwgkinc/edit#gid=0">Link to Timesheet</a>
+                    </div>
+                }
             </div>
         );
     }

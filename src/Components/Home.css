@@ -71,8 +71,8 @@ table td {
     color: black;
     background-color: white;
     font-size: 18px;
-    height: 45px;
-    width: 90px;
+    height: 55px;
+    width: 100px;
 }
 
 /* COLORS FOR EACH EMPLOYEE BOOKED TIMES */
@@ -82,8 +82,8 @@ table td {
     color: black;
     font-size: 18px;
     font-weight: bold;
-    height: 45px;
-    width: 90px;
+    height: 55px;
+    width: 100px;
 }
 
 /* .Annie-title {
@@ -98,8 +98,8 @@ table td {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    height: 45px;
-    width: 90px;
+    height: 55px;
+    width: 100px;
 }
 
 .Tiffany {
@@ -108,8 +108,8 @@ table td {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    height: 45px;
-    width: 90px;
+    height: 55px;
+    width: 100px;
 }
 
 .Scott {
@@ -118,8 +118,8 @@ table td {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    height: 45px;
-    width: 90px;
+    height: 55px;
+    width: 100px;
 }
 
 .James {
@@ -128,6 +128,16 @@ table td {
     color: black;
     font-size: 18px;
     font-weight: bold;
-    height: 45px;
-    width: 90px;
+    height: 55px;
+    width: 100px;
+}
+
+.Stephanie {
+    border: none;
+    background-color: #683548;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 55px;
+    width: 100px;
 }

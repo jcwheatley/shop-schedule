@@ -226,16 +226,16 @@ class Home extends Component {
                         <a href="https://docs.google.com/spreadsheets/d/1HQdlWAv8jz9_6yruEZ7Hr3dm1Ftu_VylHza7vtydh6E/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
-                {this.props.employee === "John" &&
+                {this.props.employee === "Nicole" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1gIro0D0JtlnjZtY-3RYk6dyS2G7z5G9CauRdGVE_DkY/edit#gid=0">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/15SE6zrc01CHnHtO8_NIg1RhcxZSyeIRo3EJeQtrE_ng/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
-                {this.props.employee === "Tiffany" &&
+                {/* {this.props.employee === "Tiffany" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/133jCowB7QwWj8ZO8zjMfwQI1BsMiJgPj7zm_q8e9uF0/edit#gid=0">Link to Timesheet</a>
                     </div>
-                }
+                } */}
                 {this.props.employee === "Scott" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1jgboUbRl7tUfvz7jvs-5PkuaXrFM9GFgmwEVSwgkinc/edit#gid=0">Link to Timesheet</a>

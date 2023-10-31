@@ -221,12 +221,12 @@ class Home extends Component {
                         </tbody>
                     </table>
                 </div>
-                {this.props.employee === "Annie" &&
+                {this.props.employee === "Jared" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1HQdlWAv8jz9_6yruEZ7Hr3dm1Ftu_VylHza7vtydh6E/edit#gid=0">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1dmddfvBoCvSj77azzDF9r4Stdoru77n5JMrFXGdj1EQ/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
-                {this.props.employee === "Nicole" &&
+                {/* {this.props.employee === "Nicole" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/15SE6zrc01CHnHtO8_NIg1RhcxZSyeIRo3EJeQtrE_ng/edit#gid=0">Link to Timesheet</a>
                     </div>
@@ -245,7 +245,7 @@ class Home extends Component {
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1F0PBcQlnmEUVAdc7Il3KZabvhFAR9wuldXB3cvPbUZ4/edit">Link to Timesheet</a>
                     </div>
-                }
+                } */}
             </div>
         );
     }

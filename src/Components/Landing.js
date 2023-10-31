@@ -21,30 +21,30 @@ class Landing extends Component {
 
 
     render() {
-        const annie = {
+        const jared = {
             pathname: "/schedule",
-            state: { employee: "Annie"}
+            state: { employee: "Jared"}
         }
 
-        const bronwen = {
-            pathname: "/schedule",
-            state: { employee: "Bronwen"}
-        }
+        // const bronwen = {
+        //     pathname: "/schedule",
+        //     state: { employee: "Bronwen"}
+        // }
 
-        const nicole = {
-            pathname: "/schedule",
-            state: { employee: "Nicole"}
-        }
+        // const nicole = {
+        //     pathname: "/schedule",
+        //     state: { employee: "Nicole"}
+        // }
 
-        const stephanie = {
-            pathname: "/schedule",
-            state: { employee: "Stephanie"}
-        }
+        // const stephanie = {
+        //     pathname: "/schedule",
+        //     state: { employee: "Stephanie"}
+        // }
 
-        const scott = {
-            pathname: "/schedule",
-            state: { employee: "Scott"}
-        }
+        // const scott = {
+        //     pathname: "/schedule",
+        //     state: { employee: "Scott"}
+        // }
 
         const james = {
             pathname: "/schedule",
@@ -59,10 +59,10 @@ class Landing extends Component {
                 <div className='landing-container'>
                     <div className='employee-container'>
                         <h2>Shop Scheduler</h2>
-                        <Link to={annie}>
-                            Annie
+                        <Link to={jared}>
+                            Jared
                         </Link>
-                        <Link to={bronwen}>
+                        {/* <Link to={bronwen}>
                             Bronwen
                         </Link>
                         <Link to={nicole}>
@@ -73,7 +73,7 @@ class Landing extends Component {
                         </Link>
                         <Link to={stephanie}>
                             Stephanie
-                        </Link>
+                        </Link> */}
                         
                         <Link to={james}>
                             James

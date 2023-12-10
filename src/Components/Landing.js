@@ -21,25 +21,26 @@ class Landing extends Component {
 
 
     render() {
+
+        const barrett = {
+            pathname: "/schedule",
+            state: { employee: "Barrett"}
+        }
+
+        const ben = {
+            pathname: "/schedule",
+            state: { employee: "Ben"}
+        }
+
+        const brigitte = {
+            pathname: "/schedule",
+            state: { employee: "Brigitte"}
+        }
+
         const jared = {
             pathname: "/schedule",
             state: { employee: "Jared"}
         }
-
-        // const bronwen = {
-        //     pathname: "/schedule",
-        //     state: { employee: "Bronwen"}
-        // }
-
-        // const nicole = {
-        //     pathname: "/schedule",
-        //     state: { employee: "Nicole"}
-        // }
-
-        // const stephanie = {
-        //     pathname: "/schedule",
-        //     state: { employee: "Stephanie"}
-        // }
 
         // const scott = {
         //     pathname: "/schedule",
@@ -59,19 +60,19 @@ class Landing extends Component {
                 <div className='landing-container'>
                     <div className='employee-container'>
                         <h2>Shop Scheduler</h2>
+                        <Link to={barrett}>
+                            Barrett
+                        </Link>
+                        <Link to={ben}>
+                            Ben
+                        </Link>
+                        <Link to={brigitte}>
+                            Brigitte
+                        </Link>
                         <Link to={jared}>
                             Jared
                         </Link>
-                        {/* <Link to={bronwen}>
-                            Bronwen
-                        </Link>
-                        <Link to={nicole}>
-                            Nicole
-                        </Link>
-                        <Link to={scott}>
-                            Scott
-                        </Link>
-                        <Link to={stephanie}>
+                        {/* <Link to={stephanie}>
                             Stephanie
                         </Link> */}
                         

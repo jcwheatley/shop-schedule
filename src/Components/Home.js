@@ -225,22 +225,22 @@ class Home extends Component {
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1dmddfvBoCvSj77azzDF9r4Stdoru77n5JMrFXGdj1EQ/edit#gid=0">Link to Timesheet</a>
                     </div>
-                }
-                {/* {this.props.employee === "Nicole" &&
+                }{this.props.employee === "Barrett" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/15SE6zrc01CHnHtO8_NIg1RhcxZSyeIRo3EJeQtrE_ng/edit#gid=0">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1zI6xt_8J6nN94dj8n8tJ9PmfZL9sKgjd5jCRQfE0ID4/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
-                {this.props.employee === "Bronwen" &&
+                {this.props.employee === "Ben" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1ytzMgDPYq_45oiGJmIcLcD8ryLc-qOALcrnXRyzrq6k/edit?usp=sharing">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1SGQojtkFKSJ2dik7d-ZrShJI8Xjme2CtS4ZLaqRRr0Y/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
-                {this.props.employee === "Scott" &&
+                {this.props.employee === "Brigitte" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1jgboUbRl7tUfvz7jvs-5PkuaXrFM9GFgmwEVSwgkinc/edit#gid=0">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/10AaqOdnvamCoGrAQcyYP6xdw_LOESLuN3UdrgffM9PQ/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
+                {/* 
                 {this.props.employee === "Stephanie" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1F0PBcQlnmEUVAdc7Il3KZabvhFAR9wuldXB3cvPbUZ4/edit">Link to Timesheet</a>

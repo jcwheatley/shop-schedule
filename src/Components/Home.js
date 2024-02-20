@@ -225,12 +225,12 @@ class Home extends Component {
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1dmddfvBoCvSj77azzDF9r4Stdoru77n5JMrFXGdj1EQ/edit#gid=0">Link to Timesheet</a>
                     </div>
-                }{this.props.employee === "Barrett" &&
+                }{this.props.employee === "Ashley" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1zI6xt_8J6nN94dj8n8tJ9PmfZL9sKgjd5jCRQfE0ID4/edit#gid=0">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1XFfSU4FZVv53gashHO6IwBvBWMzssvmA-WBSOrnX9cA/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
-                {this.props.employee === "Ben" &&
+                {/* {this.props.employee === "Ben" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1SGQojtkFKSJ2dik7d-ZrShJI8Xjme2CtS4ZLaqRRr0Y/edit#gid=0">Link to Timesheet</a>
                     </div>
@@ -239,7 +239,7 @@ class Home extends Component {
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/10AaqOdnvamCoGrAQcyYP6xdw_LOESLuN3UdrgffM9PQ/edit#gid=0">Link to Timesheet</a>
                     </div>
-                }
+                } */}
                 {/* 
                 {this.props.employee === "Stephanie" &&
                     <div className='timesheet-link'>

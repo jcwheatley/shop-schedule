@@ -22,20 +22,20 @@ class Landing extends Component {
 
     render() {
 
-        const barrett = {
+        const ashley = {
             pathname: "/schedule",
-            state: { employee: "Barrett"}
+            state: { employee: "Ashley"}
         }
 
-        const ben = {
-            pathname: "/schedule",
-            state: { employee: "Ben"}
-        }
+        // const ben = {
+        //     pathname: "/schedule",
+        //     state: { employee: "Ben"}
+        // }
 
-        const brigitte = {
-            pathname: "/schedule",
-            state: { employee: "Brigitte"}
-        }
+        // const brigitte = {
+        //     pathname: "/schedule",
+        //     state: { employee: "Brigitte"}
+        // }
 
         const jared = {
             pathname: "/schedule",
@@ -60,15 +60,15 @@ class Landing extends Component {
                 <div className='landing-container'>
                     <div className='employee-container'>
                         <h2>Shop Scheduler</h2>
-                        <Link to={barrett}>
-                            Barrett
+                        <Link to={ashley}>
+                            Ashley
                         </Link>
-                        <Link to={ben}>
+                        {/* <Link to={ben}>
                             Ben
                         </Link>
                         <Link to={brigitte}>
                             Brigitte
-                        </Link>
+                        </Link> */}
                         <Link to={jared}>
                             Jared
                         </Link>

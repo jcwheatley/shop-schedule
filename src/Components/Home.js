@@ -225,21 +225,21 @@ class Home extends Component {
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1dmddfvBoCvSj77azzDF9r4Stdoru77n5JMrFXGdj1EQ/edit#gid=0">Link to Timesheet</a>
                     </div>
-                }{this.props.employee === "Ashley" &&
+                }{this.props.employee === "James O." &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1XFfSU4FZVv53gashHO6IwBvBWMzssvmA-WBSOrnX9cA/edit#gid=0">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1DhuNwaFzaZnV8EXnYR6HY-i5fiHkq5QeM4EngnR5rq4/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
                 {/* {this.props.employee === "Ben" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1SGQojtkFKSJ2dik7d-ZrShJI8Xjme2CtS4ZLaqRRr0Y/edit#gid=0">Link to Timesheet</a>
                     </div>
-                }
-                {this.props.employee === "Brigitte" &&
+                }*/}
+                {this.props.employee === "Gavin" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/10AaqOdnvamCoGrAQcyYP6xdw_LOESLuN3UdrgffM9PQ/edit#gid=0">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1R6kEnnuMotIhRVGkbTTriJxIcn43pKvidObXPAZaEDk/edit#gid=0">Link to Timesheet</a>
                     </div>
-                } */}
+                } 
                 {/* 
                 {this.props.employee === "Stephanie" &&
                     <div className='timesheet-link'>

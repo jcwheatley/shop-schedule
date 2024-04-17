@@ -199,7 +199,9 @@ class Home extends Component {
                                                             : () => console.log("ERR: you can't edit someone else's time")
                                                     }
                                                 >
-                                                    {(bookedEmployeeOne ) ? bookedEmployeeOne : "OPEN"}
+                                                    
+                                                    {(bookedEmployeeOne ) ? ((bookedEmployeeOne === "Jameso") ? "James O." : bookedEmployeeOne) : "OPEN"}
+                                                    {/* {(bookedEmployeeOne === "Jameso") ? "James O." : "OPEN"} */}
                                                 </button>
                                             </td>
                                             <td>
@@ -211,7 +213,8 @@ class Home extends Component {
                                                             : () => console.log("ERR: you can't edit someone else's time")
                                                     }
                                                 >
-                                                    {(bookedEmployeeTwo ) ? bookedEmployeeTwo : "OPEN"}
+                                                    {(bookedEmployeeTwo ) ? ((bookedEmployeeTwo === "Jameso") ? "James O." : bookedEmployeeTwo) : "OPEN"}
+                                                    {/* {(bookedEmployeeTwo ) ? bookedEmployeeTwo : "OPEN"} */}
                                                 </button>
                                             </td>
                                        </tr>
@@ -230,11 +233,11 @@ class Home extends Component {
                         <a href="https://docs.google.com/spreadsheets/d/1DhuNwaFzaZnV8EXnYR6HY-i5fiHkq5QeM4EngnR5rq4/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
-                {/* {this.props.employee === "Ben" &&
+                {this.props.employee === "Joey" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1SGQojtkFKSJ2dik7d-ZrShJI8Xjme2CtS4ZLaqRRr0Y/edit#gid=0">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1pX8x3YHm8gkQwiPh1zoQ_ZJxgvETavMok4xzMwuagVo/edit?usp=sharing">Link to Timesheet</a>
                     </div>
-                }*/}
+                }
                 {this.props.employee === "Gavin" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1R6kEnnuMotIhRVGkbTTriJxIcn43pKvidObXPAZaEDk/edit#gid=0">Link to Timesheet</a>

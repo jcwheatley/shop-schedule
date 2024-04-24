@@ -158,7 +158,7 @@ class Home extends Component {
                             <ArrowCircleUpIcon fontSize="large" style={{ color: "#2069e0", transform: "rotate(270deg)" }}/>
                         </IconButton>
                     </Link>
-                    <div className='header-title'>Scheduling for {this.props?.employee}</div>
+                    <div className='header-title'>Scheduling for {this.props?.employee === "Jameso" ? "James O." : this.props?.employee}</div>
                 </div>
                 <div className="bookable-days-container">
                     {this.state.bookableDays.map((day, idx) => {
@@ -228,7 +228,7 @@ class Home extends Component {
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1dmddfvBoCvSj77azzDF9r4Stdoru77n5JMrFXGdj1EQ/edit#gid=0">Link to Timesheet</a>
                     </div>
-                }{this.props.employee === "James O." &&
+                }{this.props.employee === "Jameso" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1DhuNwaFzaZnV8EXnYR6HY-i5fiHkq5QeM4EngnR5rq4/edit#gid=0">Link to Timesheet</a>
                     </div>

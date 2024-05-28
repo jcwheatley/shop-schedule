@@ -224,11 +224,7 @@ class Home extends Component {
                         </tbody>
                     </table>
                 </div>
-                {this.props.employee === "Jared" &&
-                    <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1dmddfvBoCvSj77azzDF9r4Stdoru77n5JMrFXGdj1EQ/edit#gid=0">Link to Timesheet</a>
-                    </div>
-                }{this.props.employee === "Jameso" &&
+                {this.props.employee === "Jameso" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1DhuNwaFzaZnV8EXnYR6HY-i5fiHkq5QeM4EngnR5rq4/edit#gid=0">Link to Timesheet</a>
                     </div>
@@ -243,6 +239,11 @@ class Home extends Component {
                         <a href="https://docs.google.com/spreadsheets/d/1R6kEnnuMotIhRVGkbTTriJxIcn43pKvidObXPAZaEDk/edit#gid=0">Link to Timesheet</a>
                     </div>
                 } 
+                {this.props.employee === "Tyson" &&
+                    <div className='timesheet-link'>
+                        <a href="https://docs.google.com/spreadsheets/d/1Zrrbx9AMl8mIV8BciJrxLO2aYb-Vx5eNla1XnREmGr0/edit?usp=sharing">Link to Timesheet</a>
+                    </div>
+                }
                 {/* 
                 {this.props.employee === "Stephanie" &&
                     <div className='timesheet-link'>

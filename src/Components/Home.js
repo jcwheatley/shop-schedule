@@ -229,9 +229,9 @@ class Home extends Component {
                         <a href="https://docs.google.com/spreadsheets/d/1DhuNwaFzaZnV8EXnYR6HY-i5fiHkq5QeM4EngnR5rq4/edit#gid=0">Link to Timesheet</a>
                     </div>
                 }
-                {this.props.employee === "Joey" &&
+                {this.props.employee === "Cassie" &&
                     <div className='timesheet-link'>
-                        <a href="https://docs.google.com/spreadsheets/d/1pX8x3YHm8gkQwiPh1zoQ_ZJxgvETavMok4xzMwuagVo/edit?usp=sharing">Link to Timesheet</a>
+                        <a href="https://docs.google.com/spreadsheets/d/1kJ5IbMF_hrGtPe80yVeRO1Rq2zJHoode9il_u4dfpkQ/edit?usp=sharing">Link to Timesheet</a>
                     </div>
                 }
                 {this.props.employee === "Gavin" &&

@@ -27,9 +27,9 @@ class Landing extends Component {
             state: { employee: "Jameso"}
         }
 
-        const joey = {
+        const cassie = {
             pathname: "/schedule",
-            state: { employee: "Joey"}
+            state: { employee: "Cassie"}
         }
 
         const gavin = {
@@ -61,15 +61,14 @@ class Landing extends Component {
                     <div className='employee-container'>
                         <h2>Shop Scheduler</h2>
                         
-                        
+                        <Link to={cassie}>
+                            Cassie
+                        </Link>
                         <Link to={gavin}>
                             Gavin
                         </Link> 
                         <Link to={jameso}>
                             James O.
-                        </Link>
-                        <Link to={joey}>
-                            Joey
                         </Link>
                         <Link to={tyson}>
                             Tyson

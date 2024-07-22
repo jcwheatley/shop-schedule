@@ -122,6 +122,16 @@ table td {
     width: 100px;
 }
 
+.Emily {
+    border: none;
+    background-color: #b1000f;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 55px;
+    width: 100px;
+}
+
 .James {
     border: none;
     background-color: #b1c0bc;

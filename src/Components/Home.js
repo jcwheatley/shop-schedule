@@ -184,6 +184,7 @@ class Home extends Component {
                                 })
                                 let bookedEmployeeOne = temptime?.find(o => o.deskNumber === 1)?.employee
                                 let bookedEmployeeTwo = temptime?.find(o => o.deskNumber === 2)?.employee
+                                let bookedEmployeeThree = temptime?.find(o => o.deskNumber === 3)?.employee
                                 return (
                                     <React.Fragment key={`timeslot-${idx}`} >
                                         <tr key={idx}>
@@ -214,6 +215,19 @@ class Home extends Component {
                                                     }
                                                 >
                                                     {(bookedEmployeeTwo ) ? ((bookedEmployeeTwo === "Jameso") ? "James O." : bookedEmployeeTwo) : "OPEN"}
+                                                    {/* {(bookedEmployeeTwo ) ? bookedEmployeeTwo : "OPEN"} */}
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button 
+                                                    className={(bookedEmployeeThree) ? bookedEmployeeThree : 'desk-btn'} 
+                                                    onClick={ 
+                                                        (bookedEmployeeThree === this.state.employee || !bookedEmployeeThree) 
+                                                            ? () => this.handleTimeBooked(time, 3) 
+                                                            : () => console.log("ERR: you can't edit someone else's time")
+                                                    }
+                                                >
+                                                    {(bookedEmployeeThree ) ? ((bookedEmployeeThree === "Jameso") ? "James O." : bookedEmployeeThree) : "OPEN"}
                                                     {/* {(bookedEmployeeTwo ) ? bookedEmployeeTwo : "OPEN"} */}
                                                 </button>
                                             </td>

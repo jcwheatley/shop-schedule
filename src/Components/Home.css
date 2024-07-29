@@ -54,16 +54,20 @@ table {
 table td {
     padding: 0; 
     margin: 0;
-    height: 100%
+    height: 100%;
+    border: 1px solid rgb(202, 202, 202);
+    /* border-left: 1px solid rgb(202, 202, 202); */
 }
 
 .table-time-column {
     height: 100%;
-    padding-right: 40px;
+    padding-right: 20px;
+    padding-bottom: 30px;
     text-align: right;
     font-size: 14px;
     color: black;
     font-weight: bold;
+    border: none;
 }
 
 .desk-btn {

@@ -273,6 +273,11 @@ class Home extends Component {
                         <a href="https://docs.google.com/spreadsheets/d/1Zrrbx9AMl8mIV8BciJrxLO2aYb-Vx5eNla1XnREmGr0/edit?usp=sharing">Link to Timesheet</a>
                     </div>
                 }
+                {this.props.employee === "Jennifer" &&
+                    <div className='timesheet-link'>
+                        <a href="https://docs.google.com/spreadsheets/d/1dZoDx4h1lyphE34O0AiLa9r6Io8FPK5TLTn49ua21pk/edit?usp=sharing">Link to Timesheet</a>
+                    </div>
+                }
                 {/* 
                 {this.props.employee === "Stephanie" &&
                     <div className='timesheet-link'>

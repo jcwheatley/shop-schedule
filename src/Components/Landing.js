@@ -57,6 +57,11 @@ class Landing extends Component {
             state: { employee: "Tyson"}
         }
 
+        const jennifer = {
+            pathname: "/schedule",
+            state: { employee: "Jennifer"}
+        }
+
         // const scott = {
         //     pathname: "/schedule",
         //     state: { employee: "Scott"}
@@ -90,6 +95,9 @@ class Landing extends Component {
                         </Link> 
                         <Link to={jameso}>
                             James O.
+                        </Link>
+                        <Link to={jennifer}>
+                            Jennifer
                         </Link>
                         <Link to={julie}>
                             Julie

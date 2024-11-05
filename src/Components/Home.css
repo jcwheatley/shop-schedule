@@ -100,11 +100,6 @@ table td {
     width: 100px;
 }
 
-/* .Annie-title {
-    color: #ffc425;
-    margin-left: 5px;
-    padding: 3px;
-} */
 
 .Jameso {
     border: none;
@@ -119,6 +114,16 @@ table td {
 .Gavin {
     border: none;
     background-color: #0040DB;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 55px;
+    width: 100px;
+}
+
+.Kerra {
+    border: none;
+    background-color: #ab15d9;
     color: white;
     font-size: 18px;
     font-weight: bold;

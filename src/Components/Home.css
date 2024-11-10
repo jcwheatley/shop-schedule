@@ -37,18 +37,17 @@
 }
 
 .timeslots-container {
-    /* margin-top: 20px;
-    margin-bottom: 60px; */
     display: flex;
-    /* justify-content: center; */
+    flex-direction: column;
     padding: 50px 20px;
     margin: 0 20px 50px 20px;
     overflow: auto;
-    overflow-x: auto; /* Ensures horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
 }
 
-/* For WebKit browsers (e.g., Chrome, Safari) */
+.scroll-indicator {
+    padding: 30px;
+}
+
 .timeslots-container::-webkit-scrollbar {
     height: 8px; /* Sets the height of the scrollbar */
   }
@@ -61,25 +60,6 @@
   .timeslots-container::-webkit-scrollbar-track {
     background-color: #f1f1f1; /* Background color of the scrollbar track */
     border-radius: 4px; /* Rounds the track */
-  }
-  
-  For Firefox
-  .timeslots-container {
-    scrollbar-width: thin; /* Makes the scrollbar thinner */
-    scrollbar-color: #888 #f1f1f1; /* Sets thumb and track colors */
-  }
-  
-  /* General styles for better visibility */
-  .timeslots-container {
-    overflow-x: auto; /* Ensures horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
-  }
-  
-  /* Fallback for older browsers */
-  @supports not (scrollbar-color: auto) {
-    .timeslots-container {
-      overflow-x: scroll; /* Ensures scrollability in older browsers */
-    }
   }
 
 .timesheet-link {

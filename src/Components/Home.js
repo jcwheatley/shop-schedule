@@ -265,7 +265,9 @@ class Home extends Component {
                             })}
                         </tbody>
                     </table>
+                <div className="scroll-indicator">← Scroll →</div>
                 </div>
+
                 {this.props.employee === "Jameso" &&
                     <div className='timesheet-link'>
                         <a href="https://docs.google.com/spreadsheets/d/1DhuNwaFzaZnV8EXnYR6HY-i5fiHkq5QeM4EngnR5rq4/edit#gid=0">Link to Timesheet</a>

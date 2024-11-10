@@ -185,6 +185,8 @@ class Home extends Component {
                                 let bookedEmployeeOne = temptime?.find(o => o.deskNumber === 1)?.employee
                                 let bookedEmployeeTwo = temptime?.find(o => o.deskNumber === 2)?.employee
                                 let bookedEmployeeThree = temptime?.find(o => o.deskNumber === 3)?.employee
+                                let bookedEmployeeFour = temptime?.find(o => o.deskNumber === 4)?.employee
+                                let bookedEmployeeFive = temptime?.find(o => o.deskNumber === 5)?.employee
                                 return (
                                     <React.Fragment key={`timeslot-${idx}`} >
                                         <tr key={idx}>
@@ -228,6 +230,32 @@ class Home extends Component {
                                                     }
                                                 >
                                                     {(bookedEmployeeThree ) ? ((bookedEmployeeThree === "Jameso") ? "James O." : bookedEmployeeThree) : "OPEN"}
+                                                    {/* {(bookedEmployeeTwo ) ? bookedEmployeeTwo : "OPEN"} */}
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button 
+                                                    className={(bookedEmployeeFour) ? bookedEmployeeFour : 'desk-btn'} 
+                                                    onClick={ 
+                                                        (bookedEmployeeFour === this.state.employee || !bookedEmployeeFour) 
+                                                            ? () => this.handleTimeBooked(time, 4) 
+                                                            : () => console.log("ERR: you can't edit someone else's time")
+                                                    }
+                                                >
+                                                    {(bookedEmployeeFour ) ? ((bookedEmployeeFour === "Jameso") ? "James O." : bookedEmployeeFour) : "OPEN"}
+                                                    {/* {(bookedEmployeeTwo ) ? bookedEmployeeTwo : "OPEN"} */}
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button 
+                                                    className={(bookedEmployeeFive) ? bookedEmployeeFive : 'desk-btn'} 
+                                                    onClick={ 
+                                                        (bookedEmployeeFive === this.state.employee || !bookedEmployeeFive) 
+                                                            ? () => this.handleTimeBooked(time, 5) 
+                                                            : () => console.log("ERR: you can't edit someone else's time")
+                                                    }
+                                                >
+                                                    {(bookedEmployeeFive ) ? ((bookedEmployeeFive === "Jameso") ? "James O." : bookedEmployeeFive) : "OPEN"}
                                                     {/* {(bookedEmployeeTwo ) ? bookedEmployeeTwo : "OPEN"} */}
                                                 </button>
                                             </td>

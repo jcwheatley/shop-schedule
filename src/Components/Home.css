@@ -41,10 +41,24 @@
     margin-bottom: 60px; */
     display: flex;
     /* justify-content: center; */
-    padding: 50px 50px 20px 50px;
-    margin: 0 50px 50px 50px;
+    padding: 20px;
+    margin: 0 20px 50px 20px;
     overflow: auto;
 }
+
+::-webkit-scrollbar {
+    height: 8px; /* Sets the height of the scrollbar */
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar handle */
+    border-radius: 4px; /* Rounds the handle */
+  }
+  
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Background color of the scrollbar track */
+    border-radius: 4px; /* Rounds the track */
+  }
 
 .timesheet-link {
     margin-bottom: 100px;

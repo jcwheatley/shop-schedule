@@ -37,10 +37,13 @@
 }
 
 .timeslots-container {
-    margin-top: 20px;
-    margin-bottom: 60px;
+    /* margin-top: 20px;
+    margin-bottom: 60px; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    padding: 50px 50px 20px 50px;
+    margin: 0 50px 50px 50px;
+    overflow: auto;
 }
 
 .timesheet-link {
@@ -51,19 +54,30 @@ table {
     border-collapse: collapse;
 }
 
+table tbody{
+    display: flex;
+}
+
 table td {
     padding: 0; 
     margin: 0;
     height: 100%;
     border: 1px solid rgb(202, 202, 202);
+
     /* border-left: 1px solid rgb(202, 202, 202); */
+}
+
+table tr {
+    display: flex;
+    flex-direction: column;
 }
 
 .table-time-column {
     height: 100%;
-    padding-right: 20px;
-    padding-bottom: 30px;
-    text-align: right;
+    padding: 20px 0;
+    /* padding-right: 20px;
+    padding-bottom: 30px; */
+    text-align: left;
     font-size: 14px;
     color: black;
     font-weight: bold;
